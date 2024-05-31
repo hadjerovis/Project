@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Room in Babylon.js</title>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylon.glTF2FileLoader.js"></script>
+    <link rel="stylesheet" href="styleProject.css">
+</head>
+<body>
+    
+    <div id="sidebar">
+        <nav class="container">
+            <div>
+                <button id="zoomIn">+</button>
+                <button id="zoomOut">-</button>
+                <!--<button id="rotateLeft">Rotate Left</button>
+                <button id="rotateRight">Rotate Right</button>-->
+                <button id="flip">Flip</button>
+            </div>
+        </nav>
+        <div class="style-category"> 
+            <h3 class="style-button" data-style="bohemian">Bohemian</h3>
+            <div class="furniture" data-model="bohemian_armchair">
+                <img src="furniture_models/boho_armchair1.png" alt="Bohemian Armchair">
+                <p>Armchair</p>
+            </div>
+            <div class="furniture" data-model="bohemian_bed1">
+                <img src="furniture_models/boho_bed1.png" alt="Bohemian Bed">
+                <p>Bed 1</p>
+            </div>
+            <div class="furniture" data-model="bohemian_bed2">
+                <img src="furniture_models/boho_bed2.png" alt="Bohemian Bed">
+                <p>Bed 2</p>
+            </div>
+            <div class="furniture" data-model="bohemian_drawer">
+                <img src="furniture_models/boho_drawer.png" alt="Bohemian Drawer">
+                <p>Drawer</p>
+            </div>
+            <div class="furniture" data-model="bohemian_mirror">
+                <img src="furniture_models/boho_mirror.png" alt="Bohemian Mirror">
+                <p>Mirror</p>
+            </div>
+            <div class="furniture" data-model="bohemian_plant1">
+                <img src="furniture_models/boho_plant1.png" alt="Bohemian Plant">
+                <p>Plant 1</p>
+            </div>
+            <div class="furniture" data-model="bohemian_plant2">
+                <img src="furniture_models/boho_plant2.png" alt="Bohemian Plant">
+                <p>Plant 2</p>
+            </div>
+        </div>
+        <div class="style-category">
+            <h3 class="style-button" data-style="victorian">Victorian</h3>
+            <div class="furniture" data-model="victorian_armchair">
+                <img src="furniture_models/vic_armchair1.png" alt="Victorian Armchair">
+                <p>Armchair</p>
+            </div>
+            <div class="furniture" data-model="victorian_bed1">
+                <img src="furniture_models/vic_bed1.png" alt="Victorian Bed">
+                <p>Bed 1</p>
+            </div>
+            <div class="furniture" data-model="victorian_bed2">
+                <img src="furniture_models/vic_bed2.png" alt="Victorian Bed">
+                <p>Bed 2</p>
+            </div>
+            <div class="furniture" data-model="victorian_bed3">
+                <img src="furniture_models/vic_bed3.png" alt="Victorian Bed">
+                <p>Bed 3</p>
+            </div>
+            <div class="furniture" data-model="victorian_drawer">
+                <img src="furniture_models/vic_drawer1.png" alt="Victorian Drawer">
+                <p>Drawer</p>
+            </div>
+            <div class="furniture" data-model="victorian_dressing_table">
+                <img src="furniture_models/vic_drestab.png" alt="Victorian Dressing Table">
+                <p>Dressing Table</p>
+            </div>
+            <div class="furniture" data-model="victorian_chessr">
+                <img src="furniture_models/vic_chess.png" alt="Victorian Chess">
+                <p>Chess</p>
+            </div>
+        </div>
+        <div class="style-category">
+            <h3 class="style-button" data-style="minimalist">Minimalist</h3>
+            <div class="furniture" data-model="minimalist_armchair1">
+                <img src="furniture_models/mini_armchair1.png" alt="Minimalist Armchair">
+                <p>Armchair 1</p>
+            </div>
+            <div class="furniture" data-model="minimalist_armchair2">
+                <img src="furniture_models/mini_armchair2.png" alt="Minimalist Armchair">
+                <p>Armchair 2</p>
+            </div>
+            <div class="furniture" data-model="minimalist_bed1">
+                <img src="furniture_models/mini_bed1.png" alt="Minimalist Bed">
+                <p>Bed 1</p>
+            </div>
+            <div class="furniture" data-model="minimalist_bed2">
+                <img src="furniture_models/mini_bed2.png" alt="Minimalist Bed">
+                <p>Bed 2</p>
+            </div>
+            <div class="furniture" data-model="minimalist_bed3">
+                <img src="furniture_models/mini_bed3.png" alt="Minimalist Bed">
+                <p>Bed 3</p>
+            </div>
+            <div class="furniture" data-model="minimalist_drawer">
+                <img src="furniture_models/mini_drawer1.png" alt="Minimalist Drawer">
+                <p>Drawer</p>
+            </div>
+            <div class="furniture" data-model="minimalist_dressing_table">
+                <img src="furniture_models/mini_drestab.png" alt="Minimalist Dressing Table">
+                <p>Dressing Table</p>
+            </div>
+        </div>
+    </div>
+    
+    <canvas id="renderCanvas"></canvas>
+    <script src="scriptProject.js"></script>
+</body>
+</html>
