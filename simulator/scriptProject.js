@@ -231,20 +231,20 @@ window.onload = function() {
     canvas.addEventListener("pointerdown", onPointerDown, false);
     canvas.addEventListener("pointerup", onPointerUp, false);
     canvas.addEventListener("pointermove", onPointerMove, false);
-     // Function to rotate furniture to face a specific direction
+     // Function to rotate furniture 
   function rotateFurniture(furnitureMesh, direction) {
     switch (direction) {
       case "left":
-        furnitureMesh.rotation.y = Math.PI / 2; // Rotates 90 degrees on the Y-axis to face left
+        furnitureMesh.rotation.y = Math.PI / 2; // Rotates 90 degrees on the Y-axis to the left
         break;
       case "right":
-        furnitureMesh.rotation.y = -Math.PI / 2; // Rotates -90 degrees on the Y-axis to face right
+        furnitureMesh.rotation.y = -Math.PI / 2; // Rotates -90 degrees on the Y-axis to the right
         break;
       default:
         console.warn(`Invalid direction provided for furniture rotation: ${direction}`);
     }
   }
-  // Add event listeners to furniture buttons (or modify existing ones)
+  // Add event listeners to furniture buttons 
   document.querySelectorAll('.furniture').forEach(function(item) {
     item.addEventListener('click', function(event) {
       var modelName = event.currentTarget.getAttribute('data-model');
@@ -252,19 +252,19 @@ window.onload = function() {
       addFurnitureOnClick(modelName);
     });
     
-    // Add click event listener for rotation buttons (if applicable)
-    const rotateLeftButton = item.querySelector('.rotate-left'); // Assuming you have buttons with this class
+    // Add click event listener for rotation buttons 
+    const rotateLeftButton = item.querySelector('.rotate-left');
     if (rotateLeftButton) {
       rotateLeftButton.addEventListener('click', function() {
-        const furnitureMesh = scene.getMeshesByName(modelName)[0]; // Assuming furniture has a unique name
+        const furnitureMesh = scene.getMeshesByName(modelName)[0];
         rotateFurniture(furnitureMesh, "left");
       });
     }
     
-    const rotateRightButton = item.querySelector('.rotate-right'); // Assuming you have buttons with this class
+    const rotateRightButton = item.querySelector('.rotate-right');
     if (rotateRightButton) {
       rotateRightButton.addEventListener('click', function() {
-        const furnitureMesh = scene.getMeshesByName(modelName)[0]; // Assuming furniture has a unique name
+        const furnitureMesh = scene.getMeshesByName(modelName)[0]; 
         rotateFurniture(furnitureMesh, "right");
       });
     }
