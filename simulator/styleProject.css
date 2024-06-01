@@ -23,7 +23,7 @@ body, html {
 }
 nav {
     border-radius: 5px;
-    margin-bottom: 10px; /* Space between buttons and furniture list */
+    margin-bottom: 10px;
     padding: 5px;
     position: fixed;
     top: 0;
@@ -53,7 +53,7 @@ nav button {
 
 
 nav button:hover {
-    background-color: #C0C0C0; /* Darker shade for hover effect */
+    background-color: #C0C0C0;
 }
 .style-category {
     margin-bottom: 20px;
@@ -75,8 +75,8 @@ nav button:hover {
 }
 
 .furniture img {
-    width: 120px; /* Increased image size */
-    height: 120px; /* Increased image size */
+    width: 120px;
+    height: 120px;
     object-fit: cover;
     margin-bottom: 10px;
 }
