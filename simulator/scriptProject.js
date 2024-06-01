@@ -231,6 +231,44 @@ window.onload = function() {
     canvas.addEventListener("pointerdown", onPointerDown, false);
     canvas.addEventListener("pointerup", onPointerUp, false);
     canvas.addEventListener("pointermove", onPointerMove, false);
+     // Function to rotate furniture to face a specific direction
+  function rotateFurniture(furnitureMesh, direction) {
+    switch (direction) {
+      case "left":
+        furnitureMesh.rotation.y = Math.PI / 2; // Rotates 90 degrees on the Y-axis to face left
+        break;
+      case "right":
+        furnitureMesh.rotation.y = -Math.PI / 2; // Rotates -90 degrees on the Y-axis to face right
+        break;
+      default:
+        console.warn(`Invalid direction provided for furniture rotation: ${direction}`);
+    }
+  }
+  // Add event listeners to furniture buttons (or modify existing ones)
+  document.querySelectorAll('.furniture').forEach(function(item) {
+    item.addEventListener('click', function(event) {
+      var modelName = event.currentTarget.getAttribute('data-model');
+      console.log(`Placing model: ${modelName}`);
+      addFurnitureOnClick(modelName);
+    });
+    
+    // Add click event listener for rotation buttons (if applicable)
+    const rotateLeftButton = item.querySelector('.rotate-left'); // Assuming you have buttons with this class
+    if (rotateLeftButton) {
+      rotateLeftButton.addEventListener('click', function() {
+        const furnitureMesh = scene.getMeshesByName(modelName)[0]; // Assuming furniture has a unique name
+        rotateFurniture(furnitureMesh, "left");
+      });
+    }
+    
+    const rotateRightButton = item.querySelector('.rotate-right'); // Assuming you have buttons with this class
+    if (rotateRightButton) {
+      rotateRightButton.addEventListener('click', function() {
+        const furnitureMesh = scene.getMeshesByName(modelName)[0]; // Assuming furniture has a unique name
+        rotateFurniture(furnitureMesh, "right");
+      });
+    }
+  });
     // Zoom in and zoom out functionality
     document.getElementById('zoomIn').addEventListener('click', function() {
         camera.radius -= 1;
