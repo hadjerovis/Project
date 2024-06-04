@@ -96,7 +96,7 @@ window.onload = function() {
     
     // Function to add furniture on click
     function addFurnitureOnClick(modelName) {
-        const defaultPosition = new BABYLON.Vector3(0, 0, 0);
+        const defaultPosition = new BABYLON.Vector3(0, 0, -4);
         loadFurnitureModel(modelName, defaultPosition);
     }
     
