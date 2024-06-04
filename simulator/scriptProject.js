@@ -58,62 +58,16 @@ window.onload = function() {
             case "bohemian_armchair":
                 modelPath = "furniture_models/boho_armchair1.glb";
                 break;
-            case "bohemian_bed1":
-                modelPath = "furniture_models/boho_bed1.glb";
-                break;
-            case "bohemian_bed2":
-                modelPath = "furniture_models/boho_bed2.glb";
-                break;
-            case "bohemian_drawer":
-                modelPath = "furniture_models/boho_drawer.glb";
-                break;
-            case "bohemian_mirror":
-                modelPath = "furniture_models/boho_mirror.glb";
-                break;
-            case "bohemian_plant1":
-                modelPath = "furniture_models/boho_plant1.glb";
-                break;
-            case "bohemian_plant2":
-                modelPath = "furniture_models/boho_plant2.glb";
-                break;
-            case "victorian_armchair":
-                modelPath = "furniture_models/vic_armchair1.glb";
-                break;
-            case "victorian_bed1":
-                modelPath = "furniture_models/vic_bed1.glb";
-                break;
+            
             case "victorian_bed2":
                 modelPath = "furniture_models/vic_bed2.glb";
                 break;
             case "victorian_bed3":
                 modelPath = "furniture_models/vic_bed3.glb";
                 break;        
-            case "victorian_drawer":
-                modelPath = "furniture_models/vic_drawer1.glb";
-                break;
-            case "victorian_dressing_table":
-                modelPath = "furniture_models/vic_drestab.glb";
-                break;
-            case "victorian_chessr":
-                modelPath = "furniture_models/vic_chess.glb";
-                break;
-            case "minimalist_armchair1":
-                modelPath = "furniture_models/mini_armchair1.glb";
-                break;
-            case "minimalist_armchair2":
-                modelPath = "furniture_models/mini_armchair2.glb";
-                break;
+           
             case "minimalist_bed1":
                 modelPath = "furniture_models/mini_bed1.glb";
-                break;
-            case "minimalist_bed2":
-                modelPath = "furniture_models/mini_bed2.glb";
-                break;
-            case "minimalist_bed3":
-                modelPath = "furniture_models/mini_bed3.glb";
-                break;
-            case "minimalist_drawer":
-                modelPath = "furniture_models/mini_drawer1.glb";
                 break;
             case "minimalist_dressing_table":
                 modelPath = "furniture_models/mini_drestab.glb";
