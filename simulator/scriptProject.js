@@ -185,44 +185,8 @@ window.onload = function() {
     canvas.addEventListener("pointerdown", onPointerDown, false);
     canvas.addEventListener("pointerup", onPointerUp, false);
     canvas.addEventListener("pointermove", onPointerMove, false);
-     // Function to rotate furniture 
-  function rotateFurniture(furnitureMesh, direction) {
-    switch (direction) {
-      case "left":
-        furnitureMesh.rotation.y = Math.PI / 2; // Rotates 90 degrees on the Y-axis to the left
-        break;
-      case "right":
-        furnitureMesh.rotation.y = -Math.PI / 2; // Rotates -90 degrees on the Y-axis to the right
-        break;
-      default:
-        console.warn(`Invalid direction provided for furniture rotation: ${direction}`);
-    }
-  }
-  // Add event listeners to furniture buttons 
-  document.querySelectorAll('.furniture').forEach(function(item) {
-    item.addEventListener('click', function(event) {
-      var modelName = event.currentTarget.getAttribute('data-model');
-      console.log(`Placing model: ${modelName}`);
-      addFurnitureOnClick(modelName);
-    });
+
     
-    // Add click event listener for rotation buttons 
-    const rotateLeftButton = item.querySelector('.rotate-left');
-    if (rotateLeftButton) {
-      rotateLeftButton.addEventListener('click', function() {
-        const furnitureMesh = scene.getMeshesByName(modelName)[0];
-        rotateFurniture(furnitureMesh, "left");
-      });
-    }
-    
-    const rotateRightButton = item.querySelector('.rotate-right');
-    if (rotateRightButton) {
-      rotateRightButton.addEventListener('click', function() {
-        const furnitureMesh = scene.getMeshesByName(modelName)[0]; 
-        rotateFurniture(furnitureMesh, "right");
-      });
-    }
-  });
     // Zoom in and zoom out functionality
     document.getElementById('zoomIn').addEventListener('click', function() {
         camera.radius -= 1;
