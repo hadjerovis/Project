@@ -18,7 +18,7 @@
         <input type="text" placeholder="Enter your email">
         <input type="password" placeholder="Enter your password">
         <a href="#">Forgot password?</a>
-        <input type="button" class="button" value="Login">
+        <input type="button" class="button" value="Login" onclick="redirectToProjectPage()>
       </form>
       <div class="signup">
         <span class="signup">Don't have an account?
@@ -34,7 +34,7 @@
         <input type="password" placeholder="Confirm your password">
         <label id="cv" for="cv">Upload your cv</label>
         <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
-        <input type="button" class="button" value="Signup">
+        <input type="button" class="button" value="Signup" onclick="redirectToProjectPage()">
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
@@ -43,5 +43,10 @@
       </div>
     </div>
   </div>
+  <script>
+    function redirectToProjectPage() {
+      window.location.href = "../simulator/Project.html";
+    }
+  </script>
 </body>
 </html>
