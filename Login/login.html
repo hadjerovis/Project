@@ -34,7 +34,7 @@
         <input type="password" placeholder="Confirm your password">
         <label id="cv" for="cv">Upload your cv</label>
         <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
-        <input type="button" class="button" value="Signup" onclick="redirectToProjectPage()">
+        <input type="button" class="button" value="Signup" onclick="redirectToLoginPage()">
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
@@ -46,6 +46,11 @@
   <script>
     function redirectToProjectPage() {
       window.location.href = "../simulator/Project.html";
+    }
+  </script>
+  <script>
+    function redirectToLoginPage() {
+      window.location.href = "login.html";
     }
   </script>
 </body>
