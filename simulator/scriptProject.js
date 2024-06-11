@@ -58,16 +58,20 @@ window.onload = function() {
             case "bohemian_armchair":
                 modelPath = "furniture_models/boho_armchair1.glb";
                 break;
-            
+            case "bohemian_bed":
+                modelPath = "furniture_models/boho_armchair1.glb";
+                break;
             case "victorian_bed2":
                 modelPath = "furniture_models/vic_bed2.glb";
                 break;
             case "victorian_bed3":
                 modelPath = "furniture_models/vic_bed3.glb";
                 break;        
-           
             case "minimalist_bed1":
                 modelPath = "furniture_models/mini_bed1.glb";
+                break;
+            case "minimalist_bed2":
+                modelPath = "furniture_models/mini_bed2.glb";
                 break;
             case "minimalist_dressing_table":
                 modelPath = "furniture_models/mini_drestab.glb";
@@ -127,13 +131,17 @@ window.onload = function() {
                 break;
         }
     }
+    wallMaterial.diffuseTexture = new BABYLON.Texture("textures/wood_texture.jpg", scene);
+    groundMaterial.diffuseTexture = new BABYLON.Texture("textures/wood_texture.jpg", scene);
+    roofMaterial.diffuseTexture = new BABYLON.Texture("textures/wood_texture.jpg", scene);
     
-    document.querySelectorAll('.style-button').forEach(function(item) {
-        item.addEventListener('click', function(event) {
-            var style = event.currentTarget.getAttribute('data-style');
-            console.log(`Changing textures to: ${style}`);
-            changeTextures(style);
-        });
+   // document.querySelectorAll('.style-button').forEach(function(item) {
+     //   item.addEventListener('click', function(event) {
+       //     var style = event.currentTarget.getAttribute('data-style');
+         //   console.log(`Changing textures to: ${style}`);
+           // changeTextures(style);
+       // });
+    
     });
     
     // Dragging functionality
