@@ -1,15 +1,92 @@
 <!DOCTYPE html>
-<!---Coding By CoderGirl | www.codinglabweb.com--->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Login & Registration Form | CoderGirl</title>
-  <!---Custom CSS File--->
+  <title>Login & Registration Form</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+    
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyBt1j2p8bXZ0udwzn3QvXfyZttOEqFT2zs",
+      authDomain: "d-simulator-d1306.firebaseapp.com",
+      projectId: "d-simulator-d1306",
+      storageBucket: "d-simulator-d1306.appspot.com",
+      messagingSenderId: "237820701400",
+      appId: "1:237820701400:web:fc003ff0cdf892905c05ad"
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+
+    function signUp(email, password) {
+      createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // User successfully created
+          const user = userCredential.user;
+          console.log("User signed up:", user);
+          alert("Signup successful! Redirecting to the home page.");
+          redirectToHomePage();
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error("Sign Up Error:", errorCode, errorMessage);
+          alert(`Signup failed: ${errorMessage}`);
+        });
+    }
+
+    function signIn(email, password) {
+      signInWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+          // User successfully signed in
+          const user = userCredential.user;
+          console.log("User signed in:", user);
+          alert("Login successful! Redirecting to the project page.");
+          redirectToProjectPage();
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.error("Sign In Error:", errorCode, errorMessage);
+          alert(`Login failed: ${errorMessage}`);
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Sign up event
+      document.querySelector('.registration form .button').addEventListener('click', () => {
+        const email = document.querySelector('.registration form input[type="text"]').value;
+        const password = document.querySelector('.registration form input[type="password"]').value;
+        signUp(email, password);
+      });
+
+      // Sign in event
+      document.querySelector('.login form .button').addEventListener('click', () => {
+        const email = document.querySelector('.login form input[type="text"]').value;
+        const password = document.querySelector('.login form input[type="password"]').value;
+        signIn(email, password);
+      });
+    });
+
+    function redirectToProjectPage() {
+      window.location.href = "../simulator/Project.html";
+    }
+
+    function redirectToHomePage() {
+      window.location.href = "../index.html";
+    }
+  </script>
+
   <div class="container">
     <input type="checkbox" id="check">
     <div class="login form">
@@ -18,7 +95,7 @@
         <input type="text" placeholder="Enter your email">
         <input type="password" placeholder="Enter your password">
         <a href="#">Forgot password?</a>
-        <input type="button" class="button" value="Login" onclick="redirectToProjectPage()">
+        <input type="button" class="button" value="Login">
       </form>
       <div class="signup">
         <span class="signup">Don't have an account?
@@ -34,7 +111,7 @@
         <input type="password" placeholder="Confirm your password">
         <label id="cv" for="cv">Upload your cv</label>
         <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx">
-        <input type="button" class="button" value="Signup" onclick="redirectToLoginPage()">
+        <input type="button" class="button" value="Signup">
       </form>
       <div class="signup">
         <span class="signup">Already have an account?
@@ -43,15 +120,6 @@
       </div>
     </div>
   </div>
-  <script>
-    function redirectToProjectPage() {
-      window.location.href = "../simulator/Project.html";
-    }
-  </script>
-  <script>
-    function redirectToLoginPage() {
-      window.location.href = "login.html";
-    }
-  </script>
+
 </body>
 </html>
